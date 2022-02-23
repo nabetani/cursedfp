@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-typedef long double num_t;
-// typedef double num_t;
+typedef NUM_T num_t;
 
 num_t fabsll(num_t x)
 {
@@ -16,7 +15,7 @@ long double test(int n)
     num_t c = 0;
     for (int i = 1; i < n; ++i)
     {
-        num_t v = (1.0L / i)*(1.0L / i);
+        num_t v = (1.0L / (i+1))*(1.0L / i);
         num_t t = sum + v;
         sum = t;
     }
