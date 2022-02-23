@@ -14,6 +14,6 @@ A = %x(uname -m).strip
     ].each do |fpn, fpo|
         bin = "bin/" + [ntn,fpn].join("_")
         log = "log/" + [A,ntn,fpn].join("_") + ".txt"
-        %x(gcc-11 -DNUM_T="#{ntd}" -std=c17 -Wall #{fpo} -fexcess-precision=standard main.c -o #{bin} && #{bin} > #{log})
+        puts %x(gcc-11 -Wall -DNUM_T="#{ntd}" -std=c17 -Wall #{fpo} -fexcess-precision=standard main.c -o #{bin} 2>&1 && #{bin} && #{bin} > #{log})
     end
 end
