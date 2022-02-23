@@ -19,7 +19,7 @@ when "arm64"
             bin = "bin/" + [ntn,fpn].join("_")
             log = "log/" + [A,ntn,fpn].join("_") + ".txt"
             if fpo
-                puts %x(gcc-11 -Wall -DNUM_T="#{ntd}" -std=c17 -Wall #{fpo} -fexcess-precision=standard main.c -o #{bin} 2>&1 && #{bin} && #{bin} > #{log})
+                puts %x(gcc-11 -O2 -Wall -DNUM_T="#{ntd}" -std=c17 -Wall #{fpo} -fexcess-precision=standard main.c -o #{bin} 2>&1 && #{bin} && #{bin} > #{log})
             else
                 puts %x(#{bin} && #{bin} > #{log})
             end
@@ -37,7 +37,7 @@ when "x86_64"
         ].each do |fpn, fpo|
             bin = "bin/" + [ntn,fpn].join("_")
             log = "log/" + [A,ntn,fpn].join("_") + ".txt"
-            puts %x(gcc-11 -Wall -DNUM_T="#{ntd}" -std=c17 -Wall #{fpo} -fexcess-precision=standard main.c -o #{bin} 2>&1 && #{bin} && #{bin} > #{log})
+            puts %x(gcc-11 -O2 -Wall -DNUM_T="#{ntd}" -std=c17 -Wall #{fpo} -fexcess-precision=standard main.c -o #{bin} 2>&1 && #{bin} && #{bin} > #{log})
         end
     end
 else
