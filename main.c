@@ -13,9 +13,10 @@ long double test(int n)
 {
     num_t sum = 0;
     num_t c = 0;
+    num_t const one = 1.0;
     for (int i = 1; i < n; ++i)
     {
-        num_t v = (1.0L / (i+1))*(1.0L / i);
+        num_t v = (one / (i+1))*(one / i);
         num_t t = sum + v;
         sum = t;
     }
