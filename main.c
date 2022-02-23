@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
 {
     struct timespec start={0}, end={0};
     clock_gettime(CLOCK_REALTIME, &start);
-    long double r = test(10000000);
+    long double r = test(20000000);
     clock_gettime(CLOCK_REALTIME, &end);
     time_t ds = end.tv_sec - start.tv_sec;
     time_t dn = end.tv_nsec - start.tv_nsec;
